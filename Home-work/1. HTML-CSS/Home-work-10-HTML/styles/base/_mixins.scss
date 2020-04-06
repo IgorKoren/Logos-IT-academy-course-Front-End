@@ -1,0 +1,14 @@
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+@mixin animEfect($left, $animationTime) {
+
+    left: $left;
+    // width: 450px;
+    transition: left $animationTime;
+    transform: scaleX($left);
+}
+

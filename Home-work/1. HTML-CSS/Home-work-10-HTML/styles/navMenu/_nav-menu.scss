@@ -1,0 +1,195 @@
+.menu {
+
+    height: 250px;
+    // border: 1px solid #000;
+    background-color: #63B0C9;
+    box-shadow: 2px 2px 4px grey;
+    display: flex;
+
+    font-family: $baseFont;
+    font-size: $baseFontSize;
+    color: black;
+
+    &__item {
+        cursor: pointer;
+
+        width: 100px;
+
+        height: 100%;
+        position: relative;
+
+        display: flex;
+
+        overflow: hidden;
+        transition: all .5s;
+
+        &:hover {
+            // border: 10px solid #000;
+            // overflow: hidden;
+
+            width: 450px;
+            left: 0px;
+
+            transition: width .5s;
+            transition-delay: .5s;
+            transition-timing-function: linear;
+            transform: scaleX(450px);
+
+
+        }
+
+        &:hover &__box {
+
+            @include animEfect(-100px, .5s);
+
+            // left: -100px;
+
+            // transition: left 1s;
+            // transform: scaleX(-100px);
+        }
+
+        &:hover &__boxHover {
+
+            @include animEfect(0px, .5s);
+            // border: 10px solid #000;
+            // left: 0px;
+            // // width: 450px;
+            // transition: left 1s;
+            // transform: scaleX(0px);
+        }
+
+        &:hover &__card {
+
+            @include animEfect(100px, .5s);
+            // border: 10px solid #000;
+            // left: 100px;
+            // // width: 450px;
+            // transition: left 1s;
+            // transform: scaleX(100px);
+        }
+
+        &__box {
+           
+            height: 100%;
+            width: 100px;
+            // flex-basis: 100px;
+
+            border: 1px solid rgba(235, 235, 235, .5);
+
+            background-color: #77C4DD;
+            @include flexCenter();
+            position: absolute;
+            left: 0px;
+            // flex-basis: 100px;
+            transition: all .5s;
+
+            i {
+                font-family: $baseFont;
+
+                color: $iconColorText;
+                font-size: $iconFontSize;
+
+            }
+
+        }
+
+        &__boxHover {
+            
+            // flex-basis: 100px;
+
+            width: 100px;
+            // background-color: #2B3F59;
+            @include flexCenter();
+            position: relative;
+            left: 100px;
+            z-index: 2;
+            transition: all .5s;
+
+            i {
+                font-family: $baseFont;
+
+                color: $iconHoverColorText;
+                font-size: $iconHoverFontSize;
+            }
+        }
+
+
+        &__card {
+
+            height: 100%;
+            width: 350px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+
+            position: absolute;
+            // z-index: 4;
+            left: -250px;
+            white-space: normal;
+            word-wrap: break-word;
+
+
+            // left: 100px;
+            // display: none;
+            transition: all .5s;
+
+            &_title {
+                text-transform: uppercase;
+                font-size: $cardH1FontSize;
+                color: $cardColorText;
+
+                margin: 0;
+            }
+
+            &_text {
+                font-size: $cardTextFontSize;
+                color: $cardColorText;
+                white-space: normal;
+                word-wrap: break-word;
+                //    color: blanchedalmond;
+
+            }
+
+        }
+
+
+    }
+
+}
+
+.textTransform-none {
+    text-transform: none;
+}
+
+.dribbbleBgColor {
+    background: linear-gradient(to bottom, #d94470 0%, #ff99cc 100%);
+}
+
+.tweterBgColor {
+    background: #7CD8F9;
+}
+
+
+.tumblrBgColor {
+    background: #2B3F59;
+}
+
+
+.youTubeBgColor {
+    background: #D42827;
+}
+
+.instaBgColor {
+    background: linear-gradient(to bottom, #47932d 0%, #99ff66 100%);
+}
+
+
+.linkedInBgColor {
+    background: #2CA3CA;
+}
+
+.facebookBgColor {
+    background: linear-gradient(to bottom, #33ccff 0%, #426faa 100%);
+}
