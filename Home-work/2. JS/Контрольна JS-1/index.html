@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Permanent Marker -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,500;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Playfair Display -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,800;0,900;1,400;1,500;1,600;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Oswald -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- font-family: 'Spicy Rice', cursive; -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,200;0,400;0,500;0,700;0,900;1,200;1,300;1,700&family=Spicy+Rice&display=swap"
+        rel="stylesheet">
+    <!-- font-family: 'Muli', sans-serif; -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Контрольна 1 JS</title>
+
+</head>
+
+<body class="body">
+
+    <div class="bodyEditAndStyleWrap" id="bodyEditAndStyleWrap">
+
+        <div class="contOutput" style="background-color: rgb(214, 213, 213);">
+            <div id="outputtext" class="outputtext" >
+
+            </div>
+        </div>
+
+
+        <div id="contButtons " class="contButtons ">
+            <button id="editBtn" onclick="editBtnFun()" type="button" class="btn btn-warning btn-edit">edit</button>
+            <button id="styleBtn" onclick="styleBtnFun()" type="button" class="btn btn-info btn-style">style</button>
+        </div>
+        <div id="contEdit" class="contEdit ">
+            <div class="editWrap" id="editWrap">
+                <div id="editPlace" class="editPlace" contenteditable="true">
+                </div>
+                <button id="addBtn" onclick="addBtnFun()" type="button" class="btn btn-danger addBtn">add</button>
+                <button id="saveBtn" onclick="saveBtnFun()" type="button" class="btn btn-success saveBtn">save</button>
+            </div>
+            <div class="styleWrap" id="styleWrap">
+                <form class="formStyle" id="formStyle">
+                    <p class="boltText">Font size:</p>
+                    <div id="fontSizeRadiBtnWrap" class="fontSizeRadiBtnWrap">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="fontSize12" value="12" onclick="setFontSize(this)" name="fontSize" class="custom-control-input">
+                            <label class="custom-control-label"  for="fontSize12">12px
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="fontSize14" value="14" onclick="setFontSize(this)" name="fontSize" class="custom-control-input">
+                            <label class="custom-control-label"  for="fontSize14">14px</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="fontSize16" value="16"  onclick="setFontSize(this)" name="fontSize" class="custom-control-input"
+                                checked>
+                            <label class="custom-control-label"   for="fontSize16">16px
+                            </label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="fontSize18" value="18" onclick="setFontSize(this)"  name="fontSize" class="custom-control-input">
+                            <label class="custom-control-label" for="fontSize18">18px</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline ">
+                            <input type="radio" id="fontSize20" value="20" onclick="setFontSize(this)"  name="fontSize"
+                                class="custom-control-input ">
+                            <label class="custom-control-label" for="fontSize20">20px </label>
+                        </div>
+
+                    </div>
+
+                    <p class="boltText">Font Family:</p>
+                    <select id="fontFamilySelect" onchange="fontFamilySelectFun(this)" class="fontFamilyWidth custom-select">
+                        <option selected disabled>Choose option</option>
+                        <option value="Playfair Display">Playfair Display</option>
+                        <option value="Permanent Marker">Permanent Marker</option>
+                        <option value="Oswald">Oswald</option>
+                        <option value="sens-serif">sens-serif</option>
+                    </select>
+                    <p class="boltText">Colors:</p>
+                    <button id="colorOfTextBtn" onclick="colorOfTextBtnFun()" type="button"
+                        class="btn btn-secondary">Color of Text</button>
+                    <button id="bacgroundColBtn" onclick="bacgroundColBtnFun()" type="button"
+                        class="btn btn-secondary">Backround color</button>
+                    <p class="boltText">Style</p>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" id="boltTextCheckbox"
+                            onclick="boltTextCheckboxFun()">
+                        <label class="custom-control-label" for="boltTextCheckbox">Bolt text</label>
+                    </div>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <input type="checkbox" class="custom-control-input" onclick="cursiveTextCheckboxFun()"
+                            id="cursiveTextCheckbox">
+                        <label class="custom-control-label" for="cursiveTextCheckbox">Cursive text</label>
+                    </div>
+                </form>
+
+                <div class="colorPiccerWrap" id="colorPiccerWrap">
+                    <div class="colorPic" id="colorPic" onclick="selectColorFun()">
+                        <div class="selectColor1 wh" id="selectColor1" value="#D53E45" style="background-color: #D53E45"
+                            onclick="chColor(this)"></div>
+                        <div class="selectColor2 wh" id="selectColor2" style="background-color: #287FFF"
+                            onclick="chColor(this)"></div>
+                        <div class="selectColor3 wh" id="selectColor3" style="background-color: #39A544"
+                            onclick="chColor(this)"></div>
+                        <div class="break-flex"></div>
+                        <div class="selectColor4 wh" id="selectColor4" style="background-color: #343A40"
+                            onclick="chColor(this)"></div>
+                        <div class="selectColor5 wh" id="selectColor5" style="background-color: #FCC100"
+                            onclick="chColor(this)"></div>
+                        <div class="selectColor6 wh" id="selectColor6" style="background-color: #E2498B"
+                            onclick="chColor(this)"></div>
+                        <div class="break-flex"></div>
+                        <div class="selectColor7 wh" id="selectColor7" style="background-color: white"
+                            onclick="chColor(this)"></div>
+                        <div class="selectColor8 wh" id="selectColor8" style="background-color: #6F48C1"
+                            onclick="chColor(this)"></div>
+                        <div class="selectColor9 wh" id="selectColor9" style="background-color: #32A1B9"
+                            onclick="chColor(this)"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- ////// дві форми для створення Table чи List -->
+
+    <div class="tableOrListWrap contOutput" id="tableOrListWrap">
+        <form id="tableOrListRadioForm">
+            <h2>Choose what you want:</h2>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="chooseTable" onclick="tableOrListRadioFormCreator(this)" name="choosetableOrList" class="custom-control-input chooseTable">
+                <label class="custom-control-label" for="chooseTable">table
+                </label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="chooseList" onclick="tableOrListRadioFormCreator(this)" name="choosetableOrList" class="custom-control-input chooseList">
+                <label class="custom-control-label" for="chooseList">list</label>
+            </div>
+        </form>
+        <!-- ///// Форма для створення таблиці -->
+        <form class="createTable" id="createTable" style="display: none;">
+
+            <div class="form-group row">
+                <label for="countTr" class="col-sm-2 col-form-label">Count TR:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="countTr" placeholder="Count TR">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="countTd" class="col-sm-2 col-form-label">Count TD:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="countTd" placeholder="Count TD">
+                </div>
+            </div>
+
+            <h5>Add style to your table:</h5>
+
+            <div class="form-group row">
+                <label for="widthTD" class="col-sm-2 col-form-label">Width TD:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="widthTD" placeholder="Width TD">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="heightTd" class="col-sm-2 col-form-label">Height of TD:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="heightTd" placeholder="Height of TD">
+                </div>
+            </div>
+
+            <div class="columFlex-3 " id="columFlex-3">
+                <div class="form-group col col-sm-">
+                    <label id="heightTd-w" for="widthOfBorder" class="col-sm-8 col-form-label ">Width of border:</label>
+                    <div class="col-sm-12">
+                        <input type="email" class="form-control" id="widthOfBorder" placeholder="Width:">
+                    </div>
+                </div>
+
+
+                <div class="form-group col">
+                    <label for="typeOfBorder" class="col-sm-8 col-form-label ">Type of border:</label>
+                    <div class="col-sm-12">
+                        <select class="form-control" id="typeOfBorder">
+                            <option value="solid">solid</option>
+                            <option value="dotted">dotted</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group col">
+                    <label for="colorOfBorder" class="col-sm-8 col-form-label ">Color of border:</label>
+                    <div class="col-sm-12">
+                        <select class="form-control" id="colorOfBorder">
+                            <option value="black">black</option>
+                            <option value="red">red</option>
+                            <option value="blue">blue</option>
+                            <option value="green">green</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-success" id="createTableBtn" onclick="createTableBtnFun(this)">Create
+                table</button>
+        </form>
+
+        <!-- /// Форма для створення list   -->
+        <form class="createListForm" id="createListForm" style="display: none;">
+            <div class="form-group row">
+                <label for="countLi" class="col-sm-2 col-form-label">Count Li:</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="countLi" placeholder="Count Li">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="typeOfMarks" class="col-sm-2 col-form-label">Type of marks</label>
+                <div class="col-sm-10">
+                    <select id="typeOfMarks" class="form-control">
+                        <option value="circle" selected>circle</option>
+                        <option value="disc">disc</option>
+                        <option value="sqare">square</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-success" id="createListBtn" onclick="createListBtnFun(this)">Create
+                list</button>
+        </form>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+
+</html>
