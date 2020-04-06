@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    
+    
+}
+
+.container {
+    width: ${wConteiner};
+    height: ${hConteinet};
+    background-color: ${bgColor};
+    
+}
+.ava {
+    width: ${wAva};
+    height: ${hAva};
+    background-image: url(${bgAva});
+    
+}
+jj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
